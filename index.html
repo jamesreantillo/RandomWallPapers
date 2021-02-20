@@ -10,11 +10,29 @@
     <title>Random Wallpaper</title>
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <h1>Test</h1>
+    <header>
+      <h2><a id="logo" href="./index.html">Wallpaper Downloader</a></h2>
+      <form class="search-form">
+        <input type="text" name="search" class="search-input" />
 
-    <script src="" async defer></script>
+        <button type="submit" class="submit-btn">Search</button>
+      </form>
+    </header>
+    <main>
+      <div class="gallery"></div>
+    </main>
+    <div class="nav-button">
+      <button class="more">More</button>
+    </div>
+
+    <script src="./app.js" async defer></script>
   </body>
 </html>

@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: 'Comic Neue', cursive;
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  min-height: 30vh;
+  justify-content: center;
+  align-items: center;
+}
+#logo {
+  text-decoration: none;
+  color: black;
+}
+header h2 {
+  padding: 2rem;
+}
+.search-form {
+  padding: 2rem;
+  display: flex;
+}
+
+.search-form input {
+  font-size: 2rem;
+  padding: 0.5rem;
+  width: 100%;
+  border: none;
+  border: 2px solid black;
+}
+
+.search-form button {
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
