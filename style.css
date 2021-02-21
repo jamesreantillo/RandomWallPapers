@@ -31,16 +31,27 @@ header h2 {
   padding: 0.5rem;
   width: 100%;
   border: none;
-  border: 2px solid black;
+  border: 2px solid rgb(183, 243, 186);
+  box-shadow: 0 0 10px #719ece;
+}
+input:focus {
+  outline: none !important;
+  border-color: rgb(59, 168, 64);
 }
 
 .search-form button {
   border: none;
   padding: 0.5rem;
   font-size: 1rem;
-  background: black;
-  color: white;
+  background: rgb(183, 243, 186);
+  color: black;
   cursor: pointer;
+  box-shadow: 0 0 10px #719ece;
+}
+
+.search-form button:focus {
+  outline: none !important;
+  border-color: rgb(59, 168, 64);
 }
 
 .gallery-info {
@@ -48,7 +59,46 @@ header h2 {
   justify-content: space-between;
   align-items: center;
   color: gray;
+  padding: 0.5rem 0rem;
 }
 .gallery-info a {
   color: gray;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  padding: 2rem 0rem;
+  width: 80%;
+  margin: auto;
+  row-gap: 5rem;
+  column-gap: 3rem;
+}
+
+.gallery-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.nav-button {
+  min-height: 30vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:focus {
+  outline: none !important;
+}
+
+.more {
+  padding: 1rem 3rem;
+  color: black;
+  background: rgb(183, 243, 186);
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  outline: none !important;
+  border-color: rgb(59, 168, 64);
+  box-shadow: 0 0 10px #719ece;
 }
