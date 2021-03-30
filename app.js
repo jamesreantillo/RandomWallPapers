@@ -2,14 +2,20 @@ const auth = '563492ad6f917000010000013b11ed813284425a9e0d2817c567c4ee';
 const gallery = document.querySelector('.gallery');
 const searchInput = document.querySelector('.search-input');
 const form = document.querySelector('.search-form');
+const more = document.querySelector('.more');
+let page = 1;
+let fetchLink;
 let searchValue;
+let currentSearch;
 
 //Event Listener
 searchInput.addEventListener('input', updateInput);
 form.addEventListener('submit', (e) => {
   e.preventDefault();
+  currentSearch = searchValue;
   searchPhotos(searchValue);
 });
+more.addEventListener('click', loadmore);
 
 function updateInput(e) {
   searchValue = e.target.value;
@@ -22,11 +28,12 @@ function generatePhotos(data) {
     galleryImg.innerHTML = `
     <div class="gallery-info">
     <p>${photo.photographer}</p> 
-    <a href=${photo.src.original}>Download</a>
+    <a href=${photo.src.original} download>Download</a>
     </div>
     <img src=${photo.src.large}></img>
     `;
     gallery.appendChild(galleryImg);
+    console.log(photo);
   });
 }
 
@@ -48,15 +55,28 @@ async function fetchApi(url) {
 }
 
 async function curatedPhotos() {
-  const url = 'https://api.pexels.com/v1/curated?per_page=15&page=1';
-  const data = await fetchApi(url);
+  const fetchLink = 'https://api.pexels.com/v1/curated?per_page=15&page=1';
+  const data = await fetchApi(fetchLink);
   generatePhotos(data);
 }
 
 async function searchPhotos(query) {
-  const url = `https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`;
+  const fetchLink = `https://api.pexels.com/v1/search?query=${query}+query&per_page=15&page=1`;
   clear();
-  const data = await fetchApi(url);
+  const data = await fetchApi(fetchLink);
+  generatePhotos(data);
+}
+
+async function loadmore() {
+  page++;
+  console.log(page);
+  if (currentSearch) {
+    console.log(currentSearch);
+    fetchLink = `https://api.pexels.com/v1/search?query=${currentSearch}+query&per_page=15&page=${page}`;
+  } else {
+    fetchLink = `https://api.pexels.com/v1/curated?per_page=15&page=${page}`;
+  }
+  const data = await fetchApi(fetchLink);
   generatePhotos(data);
 }
 

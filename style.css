@@ -44,7 +44,7 @@ input:focus {
   padding: 0.5rem;
   font-size: 1rem;
   background: rgb(183, 243, 186);
-  color: black;
+  color: rgb(65, 51, 51);
   cursor: pointer;
   box-shadow: 0 0 10px #719ece;
 }
@@ -93,7 +93,7 @@ input:focus {
 
 .more {
   padding: 1rem 3rem;
-  color: black;
+  color: rgb(65, 51, 51);
   background: rgb(183, 243, 186);
   border: none;
   font-size: 1.2rem;
