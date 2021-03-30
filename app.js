@@ -2,6 +2,7 @@ const auth = '563492ad6f917000010000013b11ed813284425a9e0d2817c567c4ee';
 const gallery = document.querySelector('.gallery');
 const searchInput = document.querySelector('.search-input');
 const form = document.querySelector('.search-form');
+const button = document.querySelector('.search-btn');
 const more = document.querySelector('.more');
 let page = 1;
 let fetchLink;
@@ -13,7 +14,7 @@ searchInput.addEventListener('input', updateInput);
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   currentSearch = searchValue;
-  searchPhotos(searchValue);
+  searchPhotos(currentSearch);
 });
 more.addEventListener('click', loadmore);
 
@@ -69,7 +70,7 @@ async function searchPhotos(query) {
 
 async function loadmore() {
   page++;
-  console.log(page);
+  console.log('page', page);
   if (currentSearch) {
     console.log(currentSearch);
     fetchLink = `https://api.pexels.com/v1/search?query=${currentSearch}+query&per_page=15&page=${page}`;
