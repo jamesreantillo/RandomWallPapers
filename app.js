@@ -1,4 +1,4 @@
-const auth = '563492ad6f917000010000013b11ed813284425a9e0d2817c567c4ee';
+const auth = '563492ad6f91700001000001c60fb79a6010403881426e0eeba18eb8';
 const gallery = document.querySelector('.gallery');
 const searchInput = document.querySelector('.search-input');
 const form = document.querySelector('.search-form');
@@ -45,9 +45,7 @@ function clear() {
 
 async function fetchApi(url) {
   const dataFetch = await fetch(url, {
-    method: 'GET',
     headers: {
-      accept: 'application/json',
       Authorization: auth,
     },
   });
