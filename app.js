@@ -4,10 +4,16 @@ const searchInput = document.querySelector('.search-input');
 const form = document.querySelector('.search-form');
 const button = document.querySelector('.search-btn');
 const more = document.querySelector('.more');
+const chk = document.getElementById('chk');
+
 let page = 1;
 let fetchLink;
 let searchValue;
 let currentSearch;
+
+chk.addEventListener('change', () => {
+  document.body.classList.toggle('dark');
+});
 
 //Event Listener
 searchInput.addEventListener('input', updateInput);
