@@ -1,5 +1,6 @@
 const auth = '563492ad6f91700001000001c60fb79a6010403881426e0eeba18eb8';
 const gallery = document.querySelector('.gallery');
+
 const searchInput = document.querySelector('.search-input');
 const form = document.querySelector('.search-form');
 const button = document.querySelector('.search-btn');
